@@ -1,0 +1,36 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+body:before {
+	content: '';
+	position: fixed;
+	width: 100vw;
+	height:100vh;
+	background-image: url(bg.jpg);	
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+h3{
+	color: white;
+}
+.hr {
+	border-color: white;
+}
+.container {
+	position: absolute;
+    top: 20%;
+    left: 35%;
+    width: 35%
+}
+.form-content {
+	background: rgba(0,0,0,0.5);
+	padding: 40px 40px;
+}
+
+.input-label {
+    color: #09ff07;
+}
