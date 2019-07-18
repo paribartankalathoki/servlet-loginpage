@@ -20,10 +20,15 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/SuccessServlet")
 public class SuccessServlet extends HttpServlet {
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 response.setContentType("text/html");
-			PrintWriter out = response.getWriter();
-			out.print("<h1>Login Success</h1>");
+		 
+		 String username = request.getParameter("username");
+		 String password = request.getParameter("password");
+		 
+		PrintWriter out = response.getWriter();
+		out.print("<h1>Login Success</h1>");
+		out.print("<h2>username: " + username + "</h2>");
 	}
 
 

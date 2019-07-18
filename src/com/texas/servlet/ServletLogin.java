@@ -20,16 +20,27 @@ public class ServletLogin extends HttpServlet {
 		
 		response.setContentType("text/html");
 	    PrintWriter pw=response.getWriter();
-		
+		pw.println("We are from BIT");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
-		if (username.equals("admin") && password.equals("admin")) {
-			response.sendRedirect("SuccessServlet");
+		if (username.equals(password)) {
+//			response.sendRedirect("SuccessServlet");
+			RequestDispatcher rd = request.getRequestDispatcher("SuccessServlet");
+			rd.forward(request, response);
+			rd.include(request, response);
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("/FailedServlet");
+//		RequestDispatcher always use doPost method
 			rd.forward(request, response);
 		}
+		
+//		if (username.equals(password)) {
+//			response.sendRedirect("./SuccessServlet");
+//		} else {
+//			response.sendRedirect("./FailedServlet");
+////			response.sendRedirect always use doGet method
+//		}
 	}
 
 }
